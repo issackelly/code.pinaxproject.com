@@ -81,6 +81,10 @@ STATICFILES_FINDERS = [
     "compressor.finders.CompressorFinder",
 ]
 
+# django-compressor is turned off by default due to deployment overhead for
+# most users. See <URL> for more information
+COMPRESS = False
+
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
@@ -143,23 +147,23 @@ INSTALLED_APPS = [
     "pinax.templatetags",
     
     # external
-    "notification",
-    "staticfiles",
-    "debug_toolbar",
-    "uni_form",
-    "django_openid",
     "ajax_validation",
-    "timezones",
-    "emailconfirmation",
-    "nashvegas",
-    "tasks",
-    "django_filters",
-    "groups",
-    "taggit",
     "avatar",
-    "django_markup",
+    "compressor",
+    "debug_toolbar",
     "dialogos",
+    "django_filters",
+    "django_markup",
+    "django_openid",
+    "emailconfirmation",
+    "groups",
+    "nashvegas",
+    "notification",
     "pagination",
+    "staticfiles",
+    "taggit",
+    "timezones",
+    "uni_form",
     "voting",
     
     # Pinax
@@ -169,6 +173,7 @@ INSTALLED_APPS = [
     # project
     "about",
     "signals",
+    "tasks",
 ]
 
 FIXTURE_DIRS = [
